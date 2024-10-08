@@ -1,5 +1,5 @@
 import img from '../images/logo.svg'
-import { hrefs, links } from '../data'
+import { socialLinks, pageLinks } from '../data'
 
 function Navbar() {
   return (
@@ -11,13 +11,13 @@ function Navbar() {
             <i className="fas fa-bars"></i>
           </button>
         </div>
+
         <ul className="nav-links" id="nav-links">
-          {hrefs.map(({ href, title }) => {
+          {pageLinks.map(({ href, title }, index) => {
             return (
-              <li>
+              <li key={index}>
                 <a href={href} className="nav-link">
-                  {' '}
-                  {title}{' '}
+                  {title}
                 </a>
               </li>
             )
@@ -25,11 +25,16 @@ function Navbar() {
         </ul>
 
         <ul className="nav-icons">
-          {links.map(({ link, icon }) => {
+          {socialLinks.map(({ link, icon }, index) => {
             return (
-              <li>
-                <a href={link} target="_blank" className="nav-icon">
-                  <i className={icon}></i>
+              <li key={index}>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="nav-icon"
+                >
+                  <i className={icon}></i>nore
                 </a>
               </li>
             )

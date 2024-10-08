@@ -1,4 +1,4 @@
-export const links = [
+export const socialLinks = [
   {
     link: 'https://www.twitter.com',
     icon: 'fab fa-facebook',
@@ -13,7 +13,7 @@ export const links = [
   },
 ]
 
-export const hrefs = [
+export const pageLinks = [
   { href: '#home', title: 'Home' },
   { href: '#about', title: 'About' },
   { href: '#services', title: 'Secvices' },

@@ -1,34 +1,29 @@
-import { socialLinks, pageLinks } from '../data'
+import { socialLinks, pageLinks, footer } from '../data'
+import PageLinks from './PageLinks'
+import SocialLinks from './SocialLinks'
 
 function Footer() {
   return (
     <footer className="section footer">
       <ul className="footer-links">
-        {pageLinks.map(({ href, title }, index) => {
-          return (
-            <li key={index}>
-              <a href={href} className="footer-link">
-                {title}
-              </a>
-            </li>
-          )
-        })}
+        {pageLinks.map(({ href, title }, index) => (
+          <PageLinks
+            href={href}
+            title={title}
+            style={footer.linkStyle}
+            key={index}
+          />
+        ))}
       </ul>
       <ul className="footer-icons">
-        {socialLinks.map(({ link, icon }, index) => {
-          return (
-            <li key={index}>
-              <a
-                href={link}
-                target="_blank"
-                rel="noreferrer"
-                className="footer-icon"
-              >
-                <i className={icon}></i>nore
-              </a>
-            </li>
-          )
-        })}
+        {socialLinks.map(({ link, icon }, index) => (
+          <SocialLinks
+            link={link}
+            icon={icon}
+            style={footer.iconStyle}
+            key={index}
+          />
+        ))}
       </ul>
       <p className="copyright">
         copyright &copy; Backroads travel tours company

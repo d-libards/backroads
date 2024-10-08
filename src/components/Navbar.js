@@ -1,5 +1,7 @@
 import img from '../images/logo.svg'
-import { socialLinks, pageLinks } from '../data'
+import { socialLinks, pageLinks, nav } from '../data'
+import PageLinks from './PageLinks'
+import SocialLinks from './SocialLinks'
 
 function Navbar() {
   return (
@@ -13,32 +15,25 @@ function Navbar() {
         </div>
 
         <ul className="nav-links" id="nav-links">
-          {pageLinks.map(({ href, title }, index) => {
-            return (
-              <li key={index}>
-                <a href={href} className="nav-link">
-                  {title}
-                </a>
-              </li>
-            )
-          })}
+          {pageLinks.map(({ href, title }, index) => (
+            <PageLinks
+              href={href}
+              title={title}
+              key={index}
+              style={nav.linkStyle}
+            />
+          ))}
         </ul>
 
         <ul className="nav-icons">
-          {socialLinks.map(({ link, icon }, index) => {
-            return (
-              <li key={index}>
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="nav-icon"
-                >
-                  <i className={icon}></i>nore
-                </a>
-              </li>
-            )
-          })}
+          {socialLinks.map(({ link, icon }, index) => (
+            <SocialLinks
+              link={link}
+              icon={icon}
+              style={nav.iconStyle}
+              key={index}
+            />
+          ))}
         </ul>
       </div>
     </nav>
